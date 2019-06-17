@@ -86,3 +86,12 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#VSCODE
+.vscode/
+
+#WatchSass
+dist/
+
+#vendor
+vendor/
