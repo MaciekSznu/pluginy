@@ -14,7 +14,7 @@
               Restart
             </button>
         </div>
-        <div class="main-carousel">
+        <!-- <div class="main-carousel">
             <div class="carousel-cell" id="carousel-cell1" style="background-image: url('./images/gerlach.jpg')">
               <div class="container">
                 <p>Gerlach</p>
@@ -36,7 +36,40 @@
               </div>
             </div>
         </div>
+        <div class="progress-bar"></div> -->
+        <div class="main-carousel">
+            <div class="carousel-cell" id="carousel-cell1" style="background-image: url('{{ image }}')">
+              <div class="container">
+                <h1>{{ title }}</h1>
+                <div>{{description}}</div>
+              </div>
+            </div>
+        </div>
         <div class="progress-bar"></div>
+
+
+
+      <script>
+        var slides = [
+          {
+            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",	
+            title: 'Basketball', 
+            description: 'description 1'
+          },
+          {
+            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
+            name: 'Volleyball', 
+            description: 'description 2'
+          },
+          {
+            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
+            name: 'Football', 
+            description: 'description 3'
+          }
+        ];
+      </script>
+
+
 
       <script src="vendor\flickity.pkgd.min.js"></script>
       <script src="vendor\hash.js"></script>

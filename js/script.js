@@ -1,3 +1,5 @@
+'use strict'
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
@@ -21,3 +23,15 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
+
+(function(){
+  var templateSlides = document.getElementById('carousel-template').innerHTML;
+  Mustache.parse(templateSlides);
+
+  var carouselItems = '';
+
+  for(var i = 0; i < slides.length; i++){
+    console.log(slides);
+    carouselItems += Mustache.render(templateSlides, slides[i]);
+  }
+})();
