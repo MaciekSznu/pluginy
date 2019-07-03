@@ -14,6 +14,7 @@ buttonRestart.addEventListener( 'click', function(event) {
   flkty.select(0);
 });
 
+//function for progress bar
 var progressBar = document.querySelector('.progress-bar')
 
 flkty.on( 'scroll', function( progress ) {
