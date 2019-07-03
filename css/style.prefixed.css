@@ -1,2 +1,13 @@
-/* No CSS */
+.carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 50vh;
+  /* height of carousel */
+  min-height: 250px;
+}
+
+.carousel-cell .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.prefixed.css.map */

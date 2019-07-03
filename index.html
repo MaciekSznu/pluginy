@@ -3,9 +3,43 @@
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Pluginy</title>
+    <title>Pluginy</title>
+    <link tel="stylesheet" type="text/scc" href="vendor\normalize.css">
+    <link rel="stylesheet" type="text/css" href="vendor\flickity.css">
 		<link rel="stylesheet" type="text/css" href="css\style.css">
     </head>
     <body>
+        <div class="button-restart">
+            <button class="button">
+              Restart
+            </button>
+        </div>
+        <div class="main-carousel">
+            <div class="carousel-cell" id="carousel-cell1" style="background-image: url('./images/gerlach.jpg')">
+              <div class="container">
+                <p>Gerlach</p>
+              </div>
+            </div>
+            <div class="carousel-cell" id="carousel-cell2" style="background-image: url('./images/giewont.jpg')">
+              <div class="container">
+                <p>Giewont</p>
+              </div>
+            </div>
+            <div class="carousel-cell" id="carousel-cell3" style="background-image: url('./images/lomnica.jpg')">
+              <div class="container">
+                <p>Łomnica</p>
+              </div>
+            </div>
+            <div class="carousel-cell" id="carousel-cell4" style="background-image: url('./images/rysy.jpg')">
+              <div class="container">
+                <p>Rysy</p>
+              </div>
+            </div>
+        </div>
+        <div class="progress-bar"></div>
+
+      <script src="vendor\flickity.pkgd.min.js"></script>
+      <script src="vendor\hash.js"></script>
+      <script src="js/script.js"></script>
     </body>
 </html>
