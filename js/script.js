@@ -52,11 +52,12 @@ flkty.on( 'scroll', function( progress ) {
 //   // The marker, positioned at Gerlach
 //   var marker = new google.maps.Marker({position: gerlach, map: map});
 // };
+var marker = [];
 window.initMap = function(){
   var map = new google.maps.Map(
     document.getElementById('map'), 
     {
-      zoom: 11, center: slides[0].coords
+      zoom: 10, center: slides[0].coords
     });
   
   for(var i = 0; i < slides.length; i++){
