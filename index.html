@@ -9,11 +9,11 @@
 		<link rel="stylesheet" type="text/css" href="css\style.css">
     </head>
     <body>
-        <div class="button-restart">
+        <!-- <div class="button-restart">
             <button class="button">
               Restart
             </button>
-        </div>
+        </div> -->
         <!-- <div class="main-carousel">
             <div class="carousel-cell" id="carousel-cell1" style="background-image: url('./images/gerlach.jpg')">
               <div class="container">
@@ -37,14 +37,23 @@
             </div>
         </div>
         <div class="progress-bar"></div> -->
-        <div class="main-carousel">
-            <div class="carousel-cell" id="carousel-cell1" style="background-image: url('{{ image }}')">
+        <div class="main-carousel" id="result">
+            
+        </div>
+
+        <script id="carousel-template" type="x-tmpl-mustache">
+          {{{slides}}}
+        </script>
+
+        <script id="carousel-template-item" type="x-tmpl-mustache">
+            <div class="carousel-cell" id="carousel-cell" style="background-image: url('{{ image }}')">
               <div class="container">
                 <h1>{{ title }}</h1>
                 <div>{{description}}</div>
               </div>
-            </div>
-        </div>
+          </div>
+        </script>
+
         <div class="progress-bar"></div>
 
 
@@ -58,12 +67,12 @@
           },
           {
             image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
-            name: 'Volleyball', 
+            title: 'Volleyball', 
             description: 'description 2'
           },
           {
             image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
-            name: 'Football', 
+            title: 'Football', 
             description: 'description 3'
           }
         ];
