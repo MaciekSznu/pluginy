@@ -9,37 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="css\style.css">
     </head>
     <body>
-        <!-- <div class="button-restart">
+        <div class="button-restart">
             <button class="button">
               Restart
             </button>
-        </div> -->
-        <!-- <div class="main-carousel">
-            <div class="carousel-cell" id="carousel-cell1" style="background-image: url('./images/gerlach.jpg')">
-              <div class="container">
-                <p>Gerlach</p>
-              </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell2" style="background-image: url('./images/giewont.jpg')">
-              <div class="container">
-                <p>Giewont</p>
-              </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell3" style="background-image: url('./images/lomnica.jpg')">
-              <div class="container">
-                <p>Łomnica</p>
-              </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell4" style="background-image: url('./images/rysy.jpg')">
-              <div class="container">
-                <p>Rysy</p>
-              </div>
-            </div>
         </div>
-        <div class="progress-bar"></div> -->
-        <div class="main-carousel" id="result">
-            
-        </div>
+        <div class="main-carousel" id="result"></div>
 
         <script id="carousel-template" type="x-tmpl-mustache">
           {{{slides}}}
@@ -49,34 +24,35 @@
             <div class="carousel-cell" id="carousel-cell" style="background-image: url('{{ image }}')">
               <div class="container">
                 <h1>{{ title }}</h1>
-                <div>{{description}}</div>
               </div>
           </div>
         </script>
 
         <div class="progress-bar"></div>
-
-
-
-      <script>
-        var slides = [
-          {
-            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",	
-            title: 'Basketball', 
-            description: 'description 1'
-          },
-          {
-            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
-            title: 'Volleyball', 
-            description: 'description 2'
-          },
-          {
-            image: "http://via.placeholder.com/200x100/ffaaaa/000000?text=basketball",
-            title: 'Football', 
-            description: 'description 3'
-          }
-        ];
-      </script>
+        <script>
+          var slides = [
+            {
+              image: './images/gerlach.jpg',	
+              title: 'Gerlach', 
+              coords: {lat: 49.1643908, lng: 20.1248435}
+            },
+            {
+              image: './images/giewont.jpg',
+              title: 'Giewont', 
+              coords: {lat: 49.2510153, lng: 19.9252803}
+            },
+            {
+              image: './images/lomnica.jpg',
+              title: 'Łomnica', 
+              coords: {lat: 49.1953139, lng: 20.2043919}
+            },
+            {
+              image: './images/rysy.jpg',
+              title: 'Rysy', 
+              coords: {lat: 49.1795611, lng: 20.0793092}
+            }
+          ];
+        </script>
 
 
 

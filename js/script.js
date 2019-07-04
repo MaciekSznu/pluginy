@@ -1,3 +1,5 @@
+'use strict';
+
 //mustache function
 //żeby działało musi byc wywołane zanim się odpali flickity slider
 (function(){
@@ -18,7 +20,6 @@
 
 })();
 
-
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
@@ -29,11 +30,11 @@ var flkty = new Flickity( elem, {
 });
 
 //function for restart button
-// var buttonRestart = document.querySelector('.button');
+var buttonRestart = document.querySelector('.button');
 
-// buttonRestart.addEventListener( 'click', function(event) {
-//   flkty.select(0);
-// });
+buttonRestart.addEventListener( 'click', function(event) {
+  flkty.select(0);
+});
 
 //function for progress bar
 var progressBar = document.querySelector('.progress-bar');
