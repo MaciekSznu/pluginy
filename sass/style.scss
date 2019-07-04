@@ -1,8 +1,7 @@
 .carousel-cell {
   width: 100%; /* full width */
-  height: 50vh; /* height of carousel */
+  height: calc(50vh - 10px); /* height of carousel */
   min-height: 250px;
-  margin: 0 10px;
   background-size: cover;
   .container {
       max-width: 1000px;
@@ -26,9 +25,9 @@
   .button {
     background-color: black;
     color: white;
-    height: 30px;
-    width: 90px;
-    border-radius: 15px;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
     border: 1px solid black;
     cursor: pointer;
   }
@@ -37,4 +36,11 @@
   height: 20px;
   width: 0;
   background: lightblue;
+}
+
+.slider-map {
+  
+  width: 100%; /* full width */
+  height: calc(50vh - 10px);
+  min-height: 250px;
 }
