@@ -21,7 +21,7 @@
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
   // options
-  cellAlign: 'left',
+  cellAlign: 'center',
   contain: true,
   pageDots: false,
   hash: true
@@ -59,40 +59,51 @@ window.initMap = function(){
       flkty.select(i);
     });
   }
-  // elem.addEventListener('click', function move(){
-  //   flkty.on('change', function(index) {
-  //     map.panTo(slides[index].coords);
-  //     map.setZoom(10);
-  //     {
-  //     center: slides[index].coords
-  //     }
-  //   });
-  //   elem.removeEventListener('click', move, true); 
-  // }, true);
-  var sliderMap = document.getElementById('map');
-  var markerStopCenter = function (){
-      elem.removeEventListener('click', function(){
-        flkty.on('change', function(index) {
-          map.panTo(slides[index].coords);
-          map.setZoom(10);
-          {
-          center: slides[index].coords
+  
+  var previous = document.querySelectorAll('.previous');
+  var next = document.querySelectorAll('.next');
+  
+  for (let a = 0; a < previous.length; a++){
+    previous[a].addEventListener('click', function (event) {
+        for(let j = 0; j < slides.length; j++){
+          if (j === 0) {
+            map.panTo(slides[j].coords);
+            map.setZoom(10);
+            {
+            center: slides[j].coords
+            }
           }
-      });
-      });
-    };
-  
-  sliderMap.addEventListener('click', markerStopCenter());
-  
-  elem.addEventListener('click', function() {
-    flkty.on('change', function(index) {
-        map.panTo(slides[index].coords);
-        map.setZoom(10);
-        {
-        center: slides[index].coords
+          else {
+            map.panTo(slides[(j - 1)].coords);
+            map.setZoom(10);
+            {
+            center: slides[(j - 1)].coords
+            }
+          }
         }
     });
-  });
+  }
+
+  for (let b = 0; b < next.length; b++){
+    next[b].addEventListener('click', function (event) {
+        for(let k = 0; k < slides.length; k++){
+          if (k === slides.length) {
+            map.panTo(slides[k].coords);
+            map.setZoom(10);
+            {
+            center: slides[k].coords
+            }
+          }
+          else {
+            map.panTo(slides[(k + 1)].coords);
+            map.setZoom(10);
+            {
+            center: slides[(k + 1)].coords
+            }
+          }
+        }
+    });
+  }
 
 };
 
