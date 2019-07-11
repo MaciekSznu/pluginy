@@ -15,6 +15,7 @@
 
   var fullCarousel = Mustache.render(templateCarousel, {slides: carouselItems});
   result.insertAdjacentHTML('beforeend', fullCarousel);
+  return slides;
 
 })();
 
@@ -60,50 +61,26 @@ window.initMap = function(){
     });
   }
   
-  var previous = document.querySelectorAll('.previous');
-  var next = document.querySelectorAll('.next');
+  var previous = document.querySelector('.previous');
+  var next = document.querySelector('.next');
   
-  for (let a = 0; a < previous.length; a++){
-    previous[a].addEventListener('click', function (event) {
-        for(let j = 0; j < slides.length; j++){
-          if (j === 0) {
-            map.panTo(slides[j].coords);
-            map.setZoom(10);
-            {
-            center: slides[j].coords
-            }
-          }
-          else {
-            map.panTo(slides[(j - 1)].coords);
-            map.setZoom(10);
-            {
-            center: slides[(j - 1)].coords
-            }
-          }
-        }
-    });
-  }
+  previous.addEventListener('click', function (event) {
+    for(let j = 0; j < slides.length; j++){
+      if (j > 0) {
+        map.setCenter(slides[(j - 1)].coords);
+        //map.setZoom(10);
+      }
+    }
+  });
 
-  for (let b = 0; b < next.length; b++){
-    next[b].addEventListener('click', function (event) {
-        for(let k = 0; k < slides.length; k++){
-          if (k === slides.length) {
-            map.panTo(slides[k].coords);
-            map.setZoom(10);
-            {
-            center: slides[k].coords
-            }
-          }
-          else {
-            map.panTo(slides[(k + 1)].coords);
-            map.setZoom(10);
-            {
-            center: slides[(k + 1)].coords
-            }
-          }
-        }
-    });
-  }
+  next.addEventListener('click', function (event) {
+    for(var j = 0; j < slides.length; j++){
+      if (j < slides.length) {
+        map.setCenter(slides[(j + 1)].coords);
+        //map.setZoom(10);
+      }
+    }
+  });
 
 };
 
