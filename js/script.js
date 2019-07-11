@@ -9,7 +9,6 @@
 
   var carouselItems = '';
   for(var i = 0; i < slides.length; i++){
-    console.log(slides);
     carouselItems += Mustache.render(templateSlides, slides[i]);
   }
 
@@ -61,14 +60,14 @@ window.initMap = function(){
     });
   }
   
+  
   var previous = document.querySelector('.previous');
   var next = document.querySelector('.next');
   
   previous.addEventListener('click', function (event) {
-    for(let j = 0; j < slides.length; j++){
+    for(var j = 0; j < slides.length; j++){
       if (j > 0) {
-        map.setCenter(slides[(j - 1)].coords);
-        //map.setZoom(10);
+        map.setCenter(slides[j -1].coords);
       }
     }
   });
@@ -76,8 +75,7 @@ window.initMap = function(){
   next.addEventListener('click', function (event) {
     for(var j = 0; j < slides.length; j++){
       if (j < slides.length) {
-        map.setCenter(slides[(j + 1)].coords);
-        //map.setZoom(10);
+        map.setCenter(slides[j + 1].coords);
       }
     }
   });
