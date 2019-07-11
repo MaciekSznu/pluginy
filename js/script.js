@@ -65,19 +65,11 @@ window.initMap = function(){
   var next = document.querySelector('.next');
   
   previous.addEventListener('click', function (event) {
-    for(var j = 0; j < slides.length; j++){
-      if (j > 0) {
-        map.setCenter(slides[j -1].coords);
-      }
-    }
+      map.panTo(slides[(flkty.selectedIndex)].coords);
   });
 
   next.addEventListener('click', function (event) {
-    for(var j = 0; j < slides.length; j++){
-      if (j < slides.length) {
-        map.setCenter(slides[j + 1].coords);
-      }
-    }
+      map.panTo(slides[(flkty.selectedIndex)].coords);
   });
 
 };
